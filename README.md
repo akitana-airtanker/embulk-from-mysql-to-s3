@@ -1,5 +1,5 @@
 # embulk-from-mysql-to-s3
-Embulk docker container export data from mysql to AWS s3. 
+Embulk docker container export csv data from mysql to AWS s3. 
 
 # install
 ```
