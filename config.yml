@@ -1,0 +1,25 @@
+in:
+  type: mysql
+  host: {{env.DB_HOST}}
+  user: {{env.DB_USER}}
+  password: {{env.DB_PASS}}
+  database: {{env.DB_NAME}}
+  query: |
+    {{env.DB_QUERY}}
+out:
+  type: s3
+  path_prefix: {{env.S3_PASS}}/{{env.S3_PREFIX}}
+  file_ext: csv
+  bucket: {{env.S3_BUCKET}}
+  sequence_format: "."
+  formatter:
+    type: csv
+    delimiter: ","
+    newline: CRLF
+    newline_in_field: LF
+    charset: UTF-8
+    quote_policy: MINIMAL
+    quote: '"'
+    escape: "\\"
+    null_string: "NULL"
+    default_timezone: 'Asia/Tokyo'
